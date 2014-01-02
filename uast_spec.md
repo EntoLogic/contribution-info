@@ -27,7 +27,7 @@ Meta = {  } // No use yet but may be in the future.
 Program = [Function | Statement | ClassDecl]
 ```
 ```
-UnknownNode = {} // Use this for nodes that are not yet supported
+UnknownNode = {} // Use this for nodes that are not yet supported. It still takes a "node" and "loc"
 ```
 
 Declarations
