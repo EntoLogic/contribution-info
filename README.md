@@ -16,8 +16,11 @@ A UAST generator should be able to parse the input language and form the JSON UA
 
 ###What you should do
 1. Firstly, to parse a language, you are going to need a parser. Have a search around for what people use for parsing the language you are interested in creating it for. There are often a few open source projects and even some standard library libraries for this.
-2. Understand the format of the AST it generates. Then go and look at the UAST specification. Your program will need to be able to convert from your languages AST => UAST. As mentioned above, we know there may be some losses of meaning, especially specifics to your language. If you believe something on the UAST spec should be added or changed, please fork this repo and send a pull request. We are happy to extend it's functionality yet we don't want to be adding anything too unique to any particular language. This would make for excess phrases needing to be added and also kind of defeats the purpose of it's existence in the first place.
+2. Understand the format of the AST it generates. Then go and look at the UAST specification. Your program will need to be able to convert from your languages AST => UAST. As mentioned above, we know there may be some losses of meaning, especially specifics to your language. If you believe something on the UAST spec should be added or changed, please fork this repo and send a pull request. We are happy to extend its functionality yet we don't want to be adding anything too unique to any particular language. This would make for excess phrases needing to be added and also kind of defeats the purpose of its existence in the first place.
 3. Build a small prototype and then email us (info@entologic.net) with a link to it on GitHub. We can then transfer ownership of it to the EntoLogic organisation (Don't worry, you will still get all the credit for starting it).
+
+###Interface
+The UAST generators obviously must interface with the translator. The protocol (for the moment) is that you have a file in the root called ```maker.*```. It could be a shell script if you're writing for a compiled language and the binaries are elsewhere. Starting it with no arguments should open STDIN. A program will be pushed in here and then pipe will be closed (```Ctrl+D```). At that point you should write out the JSON UAST and then stop.
 
 
 ###Resources
