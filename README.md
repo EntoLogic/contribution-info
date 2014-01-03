@@ -20,7 +20,7 @@ A UAST generator should be able to parse the input language and form the JSON UA
 3. Build a small prototype and then email us (info@entologic.net) with a link to it on GitHub. We can then transfer ownership of it to the EntoLogic organisation (Don't worry, you will still get all the credit for starting it).
 
 ###Interface
-The UAST generators obviously must interface with the translator. The protocol (for the moment) is that you have a file in the root called ```maker.*```. It could be a shell script if you're writing for a compiled language and the binaries are elsewhere. Starting it with no arguments should open STDIN. A program will be pushed in here and then pipe will be closed (```Ctrl+D```). At that point you should write out the JSON UAST and then stop.
+The UAST generators obviously must interface with the translator. The protocol (for the moment) is that you have a file in the root called ```maker```. It could be a shell script if you're writing for a compiled language and the binaries are elsewhere. Starting it with no arguments should open STDIN. Our translator will then push code in here and then close pipe. (Test this using ```Ctrl+D```). At that point you should write out the JSON UAST and then stop.
 
 
 ###Resources
