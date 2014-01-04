@@ -71,9 +71,9 @@ FieldAccess = {obj: Expression, field: string}
 
 LocalFieldAccess = string | {var: Expression}
 
-VarAccess = string | {var: Expression}
+VarAccess = {var: string}
 
-MethodCall = {obj: Expression, call: FunctionCall}
+MethodCall = {obj: Expression, name: string, genericParams: [GenericParam], args: [Expression]}
 
 FunctionCall = {name: string, genericParams: [GenericParam], args: [Expression]}
 ```
