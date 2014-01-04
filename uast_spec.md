@@ -139,6 +139,8 @@ WhileStm = {cond: Expression, body: [Statement]}
 DoStm = {cond: Expression, body: [Statement]}
 
 SwitchStm = {on: Expression, cases: [{case: Expression, body: [Statement]}], default:? [Statement]}
+
+ReturnStm = {expr: Expression}
 ```
 
 Types
