@@ -5,12 +5,12 @@ This file describes the make up of a JSON Universal Abstract Syntax Tree Generat
 
 As normal ASTs are, the UAST is made up of nodes. Each node can contain multiple attributes about the part of the program it is representing and also nest other nodes inside of it. Attributes with a question mark mean that their presence is optional. The question marks should not be included in the actual output.
 
-Every JSON object node shown below has another property not shown called "node". It should hold the node type it comes from. E.g. A function declaration should look like:
+Every JSON object node shown below has another property not shown called ```"node"```. It should hold the node type it comes from. E.g. A function declaration should look like:
  ```
 {"node": "FuncDecl", "name": "foo" ... }
  ```
 
-Each node (also not shown) should also include a “loc” object containing the node’s line and column of origin and finish. Both start and end are optional, but it is preferable that you get your generator to insert the start location so we can point to the users source code where the node occurs. ```“loc”: {"start": [<line>, <col>], "end": [<line>, <col>]}```
+Each node (also not shown) should also include a ```“loc”``` object containing the node’s line and column of origin and finish. Both start and end are optional, but it is preferable that you get your generator to insert the start location so we can point to the users source code where the node occurs. ```“loc”: {"start": [<line>, <col>], "end": [<line>, <col>]}```. The first line and column should each be 0. You may need to offset to the output location of the parser for this.
 
 Look in the examples folder of this repo for some actual UAST outputs.
 
