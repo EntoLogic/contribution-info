@@ -69,7 +69,7 @@ VarRef = FieldAccess | LocalFieldAccess | VarAccess
 
 FieldAccess = {obj: Expression, field: string}
 
-LocalFieldAccess = string | {var: Expression}
+LocalFieldAccess = {var: string}
 
 VarAccess = {var: string}
 
