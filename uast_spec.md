@@ -65,9 +65,11 @@ InstanceConstruction = {class: Type, args: [Expression]}
 Variable access
 
 ```
-VarRef = FieldAccess | VarAccess
+VarRef = FieldAccess | LocalFieldAccess | VarAccess
 
 FieldAccess = {obj: Expression, field: string}
+
+LocalFieldAccess = string | {var: Expression}
 
 VarAccess = string | {var: Expression}
 
