@@ -10,7 +10,7 @@ Every JSON object node shown below has another property not shown called ```"nod
 {"node": "FuncDecl", "name": "foo" ... }
  ```
 
-Each node (also not shown) should also include a ```“loc”``` object containing the node’s line and column of origin and finish. Both start and end are optional, but it is preferable that you get your generator to insert the start location so we can point to the users source code where the node occurs. ```“loc”: {"start": [<line>, <col>], "end": [<line>, <col>]}```. The first line and column should each be 0. You may need to offset to the output location of the parser for this.
+Each node (also not shown) should also include a ```“loc”``` object containing the node’s line and column of origin and finish. Both start and end are optional, but it is preferable that you get your generator to insert the start location so we can point to the users source code where the node occurs. ```“loc”: {"start": [<line>, <col>], "end": [<line>, <col>]}```. The line and column of the first line of code should each be 0. You may need to offset  the location the parse gives you for this.
 
 Look in the examples folder of this repo for some actual UAST outputs.
 
