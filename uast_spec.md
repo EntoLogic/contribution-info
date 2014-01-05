@@ -81,13 +81,14 @@ FunctionCall = {name: string, genericParams: [GenericParam], args: [Expression]}
 Literals
 
 ```
-Literal = IntLit | FloatLit | DoubleLit | LongLit | StringLit | CharLit
+Literal = IntLit | FloatLit | DoubleLit | LongLit | StringLit | CharLit | BoolLit
 IntLit = {value: string}
 FloatLit = {value:string}
 DoubleLit = {value:string}
 LongLit = {value:string}
 StringLit = {value:string}
 CharLit = {value:string}
+BoolLit = {value: boolean}
 ```
 
 Expressions
