@@ -136,17 +136,22 @@ OpAssignment = {op: BinOperator, variable: VarRef, value: Expression}
 Control Flow
 
 ```
-IfStm = {cond: Expression, body: [Statement], else?: IfStm}
+BlockStm {contents: [Statement]}
 
-ForStm = {decls: MultiVarDecl, condition: Expression, modification: Expression, body: [Statement]}
+IfStm = {cond: Expression, then: Statement, else?: Statement}
 
-WhileStm = {cond: Expression, body: [Statement]}
+ForStm = {decls:? ForInit, condition:? Expression, update:? [Expression], body: Statement}
+ForInit = MultiVarDecl | [Expression]
 
-DoStm = {cond: Expression, body: [Statement]}
+WhileStm = {cond: Expression, body: Statement}
 
-SwitchStm = {on: Expression, cases: [{case: Expression, body: [Statement]}], default:? [Statement]}
+DoStm = {cond: Expression, body: Statement}
+
+SwitchStm = {on: Expression, cases: [{value: Expression, body: [Statement]}], default:? [Statement]}
 
 ReturnStm = {expr: Expression}
+
+LabeledStm = {label: string, stm: Statement}
 ```
 
 Types
