@@ -107,7 +107,7 @@ PostfixExpr = {op: PostfixOp, operand: Expression}
 Operators
 
 ```
-BinaryOp = +:add | -:subtract | *:multiply | /:divide | %:modulo | &&:logicalAnd | ‘||’:logicalOr | &:bitAnd | ‘|’:bitOr | ^:xor | >>:rshift | <<:lshift | >>>:rushift 
+InfixOp = +:add | -:subtract | *:multiply | /:divide | %:modulo | &&:logicalAnd | ‘||’:logicalOr | &:bitAnd | ‘|’:bitOr | ^:xor | >>:rshift | <<:lShift | >>>:rUShift 
 ```
 ```
 PrefixOp = !:not | ~:bitNot | ++: increment | --:decrement
