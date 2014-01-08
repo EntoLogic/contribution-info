@@ -92,6 +92,7 @@ LongLit = {value:string}
 StringLit = {value:string}
 CharLit = {value:string}
 BoolLit = {value: boolean}
+ArrayLit = {contents: [Expression]}
 ```
 
 Expressions
