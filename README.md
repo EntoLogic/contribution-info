@@ -64,5 +64,5 @@ We are currently working on an API and command line interface. You can use the w
 
 #### Why doesn't it highlight the whole thing I'm hovering over?
 
-The locations we can highlight depend on what kind of info we get from the language parsers. The parser we are using for Ruby (Ripper) only gives the starting character location of literals. If you think you could do a better job or want to add support for another programming language, go to the [contribution page](https://github.com/EntoLogic/contribution-info).
+The locations we can highlight depend on what kind of info we get from the language parsers. The parser we are using for Ruby (Ripper) only gives the starting character location of literals. If you think you could do a better job or want to add support for another programming language, go to the [contribution page](./CONTRIBUTING.md).
 
