@@ -9,7 +9,10 @@ About EntoLogic
 
 #### The EntoLogic project was created to help programming newcomers understand how programs work by explaining snippets they provide in whichever language they speak.
 
-The initial motivation was to have it as an entry in the [BT Young Scientist & Technology Exhibition](http://www.btyoungscientist.com/) (a national science fair) but has grown since.
+It won 1st place in the senior technology group at the [BT Young Scientist & Technology Exhibition](http://www.btyoungscientist.com/) (a national science fair).
+
+- [Paper](./paper.pdf)
+- [Poster](./poster.pdf)
 
 
 ![explain](/explain.png)  
