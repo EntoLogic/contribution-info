@@ -15,6 +15,15 @@ It won 1st place in the senior technology group at the [BT Young Scientist & Tec
 - [Poster](./poster.pdf)
 
 
+### Code
+
+- [Translator](https://github.com/EntoLogic/translator)
+- [Web application](https://github.com/EntoLogic/such_entologic)
+- [Ruby UAST generator](https://github.com/EntoLogic/ruby_uast_gen)
+- [Java UAST generator](https://github.com/EntoLogic/java_uast_gen)
+
+### UI
+
 ![explain](/explain.png)  
 
 Note the black mouse on the right hovering over the explanation which causes the code to highlight on the left.
@@ -29,13 +38,6 @@ Note the black mouse on the right hovering over the explanation which causes the
 *   The translator then traverses the nodes in the tree and gets the relevant phrase for the particular spoken language it is trying to explain it in.
 *   Any conditional clauses are dealt with and variables are filled in.
 *   The output tree is sent back to the frontend and displayed on the screen.
-
-### Code
-
-- [Translator](https://github.com/EntoLogic/translator)
-- [Web application](https://github.com/EntoLogic/such_entologic)
-- [Ruby UAST generator](https://github.com/EntoLogic/ruby_uast_gen)
-- [Java UAST generator](https://github.com/EntoLogic/java_uast_gen)
 
 
 ### FAQ
@@ -56,14 +58,6 @@ EntoLogic is written using multiple programming languages and data stores.
 #### Why isn't programming language x supported?
 
 Obviously, we want to support as many programming languages as possible so EntoLogic can reach as many learners as possible. Currently our team is very small and we aren't experts in every single programming language. We have designed our system in a way that allows users to build the software necessary to parse (nearly) any programming language. If you are interested in helping out to build a UAST generator for a language you have proficiency in, please visit the [contribution](./CONTRIBUTING.md) for more information.
-
-#### Open Source?
-
-We have been considering open sourcing much more or even our whole system. At the moment, the uast definitions and generators are open source. As we were entering the project in a competition, we wanted to keep things closed until shown to the judges
-
-#### Is there an API? I want to build a CLI/text editor plugin.
-
-We are currently working on an API and command line interface. You can use the web app until then.
 
 #### Why doesn't it highlight the whole thing I'm hovering over?
 
