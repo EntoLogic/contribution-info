@@ -14,7 +14,9 @@ The initial motivation was to have it as an entry in the [BT Young Scientist & T
 
 ![explain](/explain.png)  
 
-**[Screenshot of explanation](/explain.png)** Note the black mouse on the right hovering over the explanation which causes the code to highlight on the left.
+Note the black mouse on the right hovering over the explanation which causes the code to highlight on the left.
+
+
 
 ### How does it work?
 
@@ -24,6 +26,14 @@ The initial motivation was to have it as an entry in the [BT Young Scientist & T
 *   The translator then traverses the nodes in the tree and gets the relevant phrase for the particular spoken language it is trying to explain it in.
 *   Any conditional clauses are dealt with and variables are filled in.
 *   The output tree is sent back to the frontend and displayed on the screen.
+
+### Code
+
+- [Traslator](https://github.com/EntoLogic/translator)
+- [Web application](https://github.com/EntoLogic/such_entologic)
+- [Ruby UAST generator](https://github.com/EntoLogic/ruby_uast_gen)
+- [Java UAST generator](https://github.com/EntoLogic/java_uast_gen)
+
 
 ### FAQ
 
