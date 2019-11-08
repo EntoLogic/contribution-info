@@ -1,0 +1,31 @@
+{
+	"spoken": {
+		"en": {
+			"code": "en",
+			"en": "English"
+		},
+		"fr": {
+			"code": "fr",
+			"en": "French"
+		}, 
+		"de": {
+			"code": "de",
+			"en": "German"
+		}, 
+		"it": {
+			"code": "it",
+			"en": "Italian"
+		}
+	},
+	"programming": {
+		"ruby": {
+			"name": "ruby",
+			"fullName": "Ruby",
+			"uastGenRepo": "https://github.com/EntoLogic/ruby_uast_gen"
+		},
+		"java": {
+			"fullName": "Java",
+			"name": "java"
+		}
+	}
+}

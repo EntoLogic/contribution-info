@@ -1,0 +1,366 @@
+[
+	{
+		"phrase_type": "CompilationUnit",
+		"descriptive": "Compilation unit",
+        "editable": true,
+		"attributes": [
+			{"attr": "package", "attr_type": "list", "full_name": "Package declaration"},
+			{"attr": "imports", "attr_type": "list", "full_name": "Import statements"},
+			{"attr": "typeDeclarations", "attr_type": "list", "full_name": "Type declarations in compilation unit"}
+		]
+	},
+	{
+		"phrase_type": "ClassDecl",
+		"descriptive": "Class Declaration",
+        "editable": true,
+		"attributes": [
+			{"attr": "modifiers", "attr_type": "list", "full_name": "Modifiers to class"},
+			{"attr": "name", "attr_type": "string", "full_name": "Class name"},
+			{"attr": "genericParameters", "attr_type": "list", "full_name": "Generic parameters to class"},
+			{"attr": "superClass", "attr_type": "nested", "full_name": "Superclass extended by class"},
+			{"attr": "interfaces", "attr_type": "list", "full_name": "Interfaces implemented by class"},
+			{"attr": "members", "attr_type": "list", "full_name": "Members of class"}
+		]
+	},
+	{
+		"phrase_type": "FuncDecl",
+		"descriptive": "Function Declaration",
+        "editable": true,
+		"attributes": [
+			{"attr": "modifiers", "attr_type": "list", "full_name": "Modifiers to function"},
+			{"attr": "name", "attr_type": "string", "full_name": "Function name"},
+			{"attr": "returnType", "attr_type": "nested", "full_name": "Function return type"},
+			{"attr": "arguments", "attr_type": "list", "full_name": "Function arguments"},
+			{"attr": "body", "attr_type": "list", "full_name": "Function body"}
+		]
+	},
+    {
+        "phrase_type": "ParamDecl",
+        "descriptive": "Argument in function declaration",
+        "editable": true,
+        "attributes": [
+            {"attr": "name", "attr_type": "string", "full_name": "Name of function argument"},
+            {"attr": "type", "attr_type": "nested", "full_name": "Type of function argument"},
+            {"attr": "default", "attr_type": "nested", "full_name": "Default value of function argument"}
+        ]
+    },
+    {
+        "phrase_type": "Expression",
+        "descriptive": "Expression",
+        "editable": false,
+        "attributes": [
+            {"attr": "subexpression", "attr_type": "boolean", "full_name": "Whether this expression is contained within a larger expression"}
+        ]
+    },
+    {
+        "phrase_type": "BinaryExpr",
+        "descriptive": "Binary Operator Expression",
+        "deriving": ["Expression"],
+        "editable": true,
+        "attributes": [
+            {"attr": "operation", "attr_type": "string", "full_name": "Textual representation of operation being performed"},
+            {"attr": "left", "attr_type": "nested", "full_name": "Expression on the left of the operator"},
+            {"attr": "right", "attr_type": "nested", "full_name": "Expression on the right of the operator"}
+        ]
+    },
+    {
+        "phrase_type": "PrefixExpr",
+        "descriptive": "Prefix Operator Expression",
+        "deriving": ["Expression"],
+        "editable": true,
+        "attributes": [
+            {"attr": "operation", "attr_type": "string", "full_name": "Textual representation of operation being performed"},
+            {"attr": "expression", "attr_type": "nested", "full_name": "Expression being operated on"}
+        ]
+    },
+    {
+        "phrase_type": "PostfixExpr",
+        "descriptive": "Postfix Operator Expression",
+        "deriving": ["Expression"],
+        "editable": true,
+        "attributes": [
+            {"attr": "operation", "attr_type": "string", "full_name": "Textual representation of operation being performed"},
+            {"attr": "expression", "attr_type": "nested", "full_name": "Expression being operated on"}
+        ]
+    },
+    {
+        "phrase_type": "VarAccess",
+        "descriptive": "Variable Access",
+        "deriving": ["Expression"],
+        "editable": true,
+        "attributes": [
+            {"attr": "varName", "attr_type": "string", "full_name": "The name of the variable being accessed"}
+        ]
+    },
+    {
+        "phrase_type": "FieldAccess",
+        "descriptive": "Field Access",
+        "deriving": ["Expression"],
+        "editable": true,
+        "attributes": [
+            {"attr": "object", "attr_type": "nested", "full_name": "The object whose field is being accessed"},
+            {"attr": "fieldName", "attr_type": "string", "full_name": "The name of the field being accessed"}
+        ]
+    },
+    {
+        "phrase_type": "InstanceConstruction",
+        "descriptive": "Construction of type instance",
+        "deriving": ["Expression"],
+        "editable": true,
+        "attributes": [
+            {"attr": "type", "attr_type": "nested", "full_name": "The type of which an instance is being constructed"},
+            {"attr": "arguments", "attr_type": "list", "full_name": "The arguments to the type constructor"}
+        ]
+    },
+    {
+        "phrase_type": "MethodCall",
+        "descriptive": "Method call on object",
+        "deriving": ["Expression"],
+        "editable": true,
+        "attributes": [
+            {"attr": "object", "attr_type": "nested", "full_name": "The object on which the method is being called"},
+            {"attr": "name", "attr_type": "string", "full_name": "The name of the method being called"},
+            {"attr": "genericParameters", "attr_type": "list", "full_name": "Generic parameters to the method"},
+            {"attr": "arguments", "attr_type": "list", "full_name": "The arguments to the method"}
+        ]
+    },
+    {
+        "phrase_type": "FunctionCall",
+        "descriptive": "Function Call",
+        "deriving": ["Expression"],
+        "editable": true,
+        "attributes": [
+            {"attr": "name", "attr_type": "string", "full_name": "The name of the function being called"},
+            {"attr": "genericParameters", "attr_type": "list", "full_name": "Generic parameters to the function"},
+            {"attr": "arguments", "attr_type": "list", "full_name": "The arguments to the function"}
+        ]
+    },
+    {
+        "phrase_type": "Assignment",
+        "descriptive": "Assignment",
+        "deriving": ["Expression"],
+        "editable": true,
+        "attributes": [
+            {"attr": "variable", "attr_type": "nested", "full_name": "Variable being assigned to"},
+            {"attr": "expression", "attr_type": "nested", "full_name": "Expression on the right side of the assignment"}
+        ]
+    },
+    {
+        "phrase_type": "OpAssignment",
+        "descriptive": "Assignment with operator",
+        "deriving": ["Expression"],
+        "editable": true,
+        "attributes": [
+            {"attr": "operation", "attr_type": "string", "full_name": "Textual representation of operation being performed"},
+            {"attr": "variable", "attr_type": "nested", "full_name": "Variable being assigned to"},
+            {"attr": "expression", "attr_type": "nested", "full_name": "Expression on the right side of the operator-assignment"}
+        ]
+    },
+    {
+        "phrase_type": "StringLit",
+        "descriptive": "String literal",
+        "deriving": ["Expression"],
+        "editable": true,
+        "attributes": [
+            {"attr": "value", "attr_type": "string", "full_name": "String in literal"}
+        ]
+    },
+    {
+        "phrase_type": "ArrayLit",
+        "descriptive": "Array literal",
+        "deriving": ["Expression"],
+        "editable": true,
+        "attributes": [
+            {"attr": "contents", "attr_type": "list", "full_name": "Contents of array"}
+        ]
+    },
+    {
+        "phrase_type": "VarDecl",
+        "descriptive": "Single variable declaration",
+        "editable": true,
+        "attributes": [
+            {"attr": "modifiers", "attr_type": "list", "full_name": "Variable modifiers"},
+            {"attr": "type", "attr_type": "nested", "full_name": "Type of variable being declared"},
+            {"attr": "initializer", "attr_type": "nested", "full_name": "Initializer expression the variable is being assigned to"},
+            {"attr": "name", "attr_type": "nested", "full_name": "Name of variable being declared"}
+        ]
+    },
+    {
+        "phrase_type": "ArrayType",
+        "descriptive": "Array type",
+        "deriving": [],
+        "editable": true,
+        "attributes": [
+            {"attr": "elementType", "attr_type": "nested", "full_name": "Type of array elements"}
+        ]
+    },
+    {
+        "phrase_type": "ClassType",
+        "descriptive": "Class type",
+        "deriving": [],
+        "editable": true,
+        "attributes": [
+            {"attr": "parts", "attr_type": "list", "full_name": "Dot-seperated parts of type, each with possible generic parameters"}
+        ]
+    },
+    {
+        "phrase_type": "ClassTypePart",
+        "descriptive": "Dot-separated part of class type",
+        "deriving": [],
+        "editable": true,
+        "attributes": [
+            {"attr": "name", "attr_type": "nested", "full_name": "Name of class or package"},
+            {"attr": "genericParameters", "attr_type": "nested", "full_name": "Generic parameters to class"}
+        ]
+    },
+    {
+        "phrase_type": "add",
+        "descriptive": "Addition operator",
+        "editable": true,
+        "attributes": []
+    },
+    {
+        "phrase_type": "subtract",
+        "descriptive": "Subtraction operator",
+        "editable": true,
+        "attributes": []
+    },
+    {
+        "phrase_type": "add",
+        "descriptive": "Addition operator",
+        "editable": true,
+        "attributes": []
+    },
+    {
+        "phrase_type": "multiply",
+        "descriptive": "Multiplication operator",
+        "editable": true,
+        "attributes": []
+    },
+    {
+        "phrase_type": "divide",
+        "descriptive": "Division operator",
+        "editable": true,
+        "attributes": []
+    },
+    {
+        "phrase_type": "modulo",
+        "descriptive": "Modulo operator",
+        "editable": true,
+        "attributes": []
+    },
+    {
+        "phrase_type": "logicalOr",
+        "descriptive": "Logical OR operator",
+        "editable": true,
+        "attributes": []
+    },
+    {
+        "phrase_type": "logicalAnd",
+        "descriptive": "Logical AND operator",
+        "editable": true,
+        "attributes": []
+    },
+    {
+        "phrase_type": "bitOr",
+        "descriptive": "Bitwise OR operator",
+        "editable": true,
+        "attributes": []
+    },
+    {
+        "phrase_type": "bitAnd",
+        "descriptive": "Bitwise AND operator",
+        "editable": true,
+        "attributes": []
+    },
+    {
+        "phrase_type": "xor",
+        "descriptive": "Exclusive OR operator",
+        "editable": true,
+        "attributes": []
+    },
+    {
+        "phrase_type": "rShift",
+        "descriptive": "Bitshift right operator",
+        "editable": true,
+        "attributes": []
+    },
+    {
+        "phrase_type": "lShift",
+        "descriptive": "Bitshift left operator",
+        "editable": true,
+        "attributes": []
+    },
+    {
+        "phrase_type": "rUShift",
+        "descriptive": "Unsigned bitshift right operator",
+        "editable": true,
+        "attributes": []
+    },
+    {
+        "phrase_type": "public",
+        "descriptive": "Public modifier",
+        "editable": true,
+        "attributes": []
+    },
+    {
+        "phrase_type": "private",
+        "descriptive": "Private modifier",
+        "editable": true,
+        "attributes": []
+    },
+    {
+        "phrase_type": "protected",
+        "descriptive": "Protected modifier",
+        "editable": true,
+        "attributes": []
+    },
+    {
+        "phrase_type": "static",
+        "descriptive": "Static modifier",
+        "editable": true,
+        "attributes": []
+    },
+    {
+        "phrase_type": "const",
+        "descriptive": "Const modifier",
+        "editable": true,
+        "attributes": []
+    },
+    {
+        "phrase_type": "final",
+        "descriptive": "Final modifier",
+        "editable": true,
+        "attributes": []
+    },
+    {
+        "phrase_type": "abstract",
+        "descriptive": "Abstract modifier",
+        "editable": true,
+        "attributes": []
+    },
+    {
+        "phrase_type": "transient",
+        "descriptive": "Transient modifier",
+        "editable": true,
+        "attributes": []
+    },
+    {
+        "phrase_type": "volatile",
+        "descriptive": "Volatile modifier",
+        "editable": true,
+        "attributes": []
+    },
+    {
+        "phrase_type": "synchronized",
+        "descriptive": "Synchronized modifier",
+        "editable": true,
+        "attributes": []
+    },
+    {
+        "phrase_type": "strictfp",
+        "descriptive": "StrictFP modifier",
+        "editable": true,
+        "attributes": []
+    }
+]
