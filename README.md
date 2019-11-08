@@ -29,7 +29,7 @@ Note the black mouse on the right hovering over the explanation which causes the
 
 ### Code
 
-- [Traslator](https://github.com/EntoLogic/translator)
+- [Translator](https://github.com/EntoLogic/translator)
 - [Web application](https://github.com/EntoLogic/such_entologic)
 - [Ruby UAST generator](https://github.com/EntoLogic/ruby_uast_gen)
 - [Java UAST generator](https://github.com/EntoLogic/java_uast_gen)
